@@ -1,0 +1,9 @@
+
+.table-row-cell {
+    -fx-background-color: white;
+    -fx-border-color: red;
+}
+.table-row-cell:empty {
+    -fx-background-color: white;
+    -fx-border-color: red;
+}
