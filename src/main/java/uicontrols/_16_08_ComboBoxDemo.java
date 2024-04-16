@@ -22,19 +22,17 @@ import javafx.scene.text.Font;
 
 public class _16_08_ComboBoxDemo extends Application {
   // Declare an array of Strings for flag titles
-  private String[] flagTitles = {"France", "United Kingdom", "USA"};
+  private String[] flagTitles = {"Canada", "France", "United Kingdom", "USA"};
 
   // Declare an ImageView array for the national flags of 9 countries
    ImageView[] flagImage = {
-     new ImageView("https://upload.wikimedia.org/wikipedia/commons/a/a4/Animated-Flag-France.gif")
+     new ImageView("https://upload.wikimedia.org/wikipedia/commons/3/39/Animated-Flag-Canada.gif")
+     ,new ImageView("https://upload.wikimedia.org/wikipedia/commons/a/a4/Animated-Flag-France.gif")
     ,new ImageView("https://upload.wikimedia.org/wikipedia/commons/5/58/UK_flag_m_v.gif")
     ,new ImageView("https://upload.wikimedia.org/wikipedia/commons/4/42/Animated-Flag-USA.gif")
   };
   
   // Declare an array of strings for flag descriptions
-  private String[] flagDescription = new String[3];
-
-  // Declare and create a description pane
   private DescriptionPane descriptionPane = new DescriptionPane();
 
   // Create a combo box for selecting countries
@@ -43,9 +41,10 @@ public class _16_08_ComboBoxDemo extends Application {
   @Override // Override the start method in the Application class
   public void start(Stage primaryStage) {
     // Set text description
-    flagDescription[0] = "Description for France ... ";
-    flagDescription[1] = "Description for UK ... ";
-    flagDescription[2] = "The USA national flag ...";
+    flagTitles[0] = "Description for Canada ...";
+    flagTitles[1] = "Description for France ... ";
+    flagTitles[2] = "Description for UK ... ";
+    flagTitles[3] = "The USA national flag ...";
 
     // Set the first country (France) for display
     setDisplay(0);
@@ -63,7 +62,7 @@ public class _16_08_ComboBoxDemo extends Application {
     paneForComboBox.setCenter(cbo);
     pane.setTop(paneForComboBox);
     cbo.setPrefWidth(400);
-    cbo.setValue("France");
+    cbo.setValue("Canada");
     
     ObservableList<String> items = 
       FXCollections.observableArrayList(flagTitles);
@@ -84,7 +83,7 @@ public class _16_08_ComboBoxDemo extends Application {
   public void setDisplay(int index) {
     descriptionPane.setTitle(flagTitles[index]);
     descriptionPane.setImageView(flagImage[index]);
-    descriptionPane.setDescription(flagDescription[index]);
+    descriptionPane.setDescription(flagTitles[index]);
   }
 
   /**
